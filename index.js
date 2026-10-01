@@ -71,55 +71,31 @@ function nextSlide()
     current++;
 
     moveSlider(current);
+}
 
-
-    /*
-        位置：
-
-        [3] [1] [2] [3] [1]
-             ↑
-             1
-
-        ↓
-
-        [3] [1] [2] [3] [1]
-                     ↑
-                     3
-
-        ↓
-
-        [3] [1] [2] [3] [1]
-                         ↑
-                         複製1
-    */
-
+track.addEventListener("transitionend", () =>
+{
     if (current === 4)
     {
-        setTimeout(() => {
+        // アニメーションをOFF
+        track.style.transition = "none";
 
-            /*
-                アニメーション終了後、
+        // 複製1 → 本物1へワープ
+        current = 1;
 
-                複製1
-                    ↓
-                本物の1
+        moveSlider(current, false);
 
-                に瞬間移動する。
+        // ブラウザにワープ後の状態を確定させる
+        track.offsetHeight;
 
-                どちらも同じ画像なので
-                見た目上は途切れない。
-            */
-
-            current = 1;
-
-            moveSlider(
-                current,
-                false
-            );
-
-        }, 500);
+        // 次のフレームからアニメーションを戻す
+        requestAnimationFrame(() =>
+        {
+            track.style.transition =
+                "transform 0.5s ease";
+        });
     }
-}
+});
 
 
 // ====================
