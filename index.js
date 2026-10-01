@@ -1,4 +1,5 @@
 let current = 1;
+let isMoving = false;
 
 const track = document.getElementById("slider-track");
 const images = track.querySelectorAll("img");
@@ -59,6 +60,11 @@ function moveSlider(index, animation = true)
         );
 
     });
+
+    if (animation)
+    {
+        isMoving = true;
+    }
 }
 
 
@@ -68,32 +74,40 @@ function moveSlider(index, animation = true)
 
 function nextSlide()
 {
+    if (isMoving)
+        return;
+    
     current++;
 
     moveSlider(current);
 }
 
-track.addEventListener("transitionend", () =>
+track.addEventListener("transitionend", (event) =>
 {
+    if (event.propertyName !== "transform")
+        return;
+
     if (current === 4)
     {
-        // アニメーションをOFF
         track.style.transition = "none";
 
-        // 複製1 → 本物1へワープ
         current = 1;
 
         moveSlider(current, false);
 
-        // ブラウザにワープ後の状態を確定させる
         track.offsetHeight;
 
-        // 次のフレームからアニメーションを戻す
         requestAnimationFrame(() =>
         {
             track.style.transition =
                 "transform 0.5s ease";
+
+            isMoving = false;
         });
+    }
+    else
+    {
+        isMoving = false;
     }
 });
 
@@ -107,6 +121,9 @@ buttons.forEach(button => {
     button.addEventListener(
         "click",
         () => {
+
+            if (isMoving)
+                return;
 
             const index =
                 Number(
