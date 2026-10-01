@@ -22,16 +22,6 @@
 <p>文章あれこれ</p>
 <h4>記事ページ見出し・小</h4>
 <p>文章あれこれ</p>
-  <p id="timer">0</p>
-
-<script>
-let time = 0;
-
-setInterval(() => {
-    time++;
-    document.getElementById("timer").textContent = time;
-}, 1000);
-</script>
 </div>
 </main>
 <aside>
@@ -47,5 +37,15 @@ setInterval(() => {
 </aside>
 </div>
 <footer>© 2010 あなたのホームページ</footer>
+    <p id="timer">0</p>
+
+<script>
+let time = 0;
+
+setInterval(() => {
+    time++;
+    document.getElementById("timer").textContent = time;
+}, 1000);
+</script>
 </div></body>
 </html>
