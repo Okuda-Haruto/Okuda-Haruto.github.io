@@ -8,31 +8,70 @@ const imageWidth = 600;
 const gap = 20;
 const sliderWidth = 800;
 
-function slide(index) {
+// 本物の画像は3枚
+const imageCount = 3;
 
-    current = index;
 
-    // 中央に画像を持ってくるための位置
+// 画像を移動
+function moveSlider(index, animation = true) {
+
     const moveX =
         (sliderWidth - imageWidth) / 2
-        - current * (imageWidth + gap);
+        - index * (imageWidth + gap);
+
+    // アニメーションのON/OFF
+    track.style.transition =
+        animation ? "transform 0.5s ease" : "none";
 
     track.style.transform =
         `translateX(${moveX}px)`;
 
-    // 中央画像を明るくする
+    // 現在の画像を明るくする
     images.forEach((image, i) => {
-        image.classList.toggle("active", i === current);
+
+        image.classList.toggle(
+            "active",
+            i === index
+        );
+
     });
 
-    // 下のボタンを更新
+    // ドットを更新
     buttons.forEach((button, i) => {
-        button.classList.toggle("active", i === current);
+
+        button.classList.toggle(
+            "active",
+            i === index % imageCount
+        );
+
     });
 }
 
 
-// 下のボタンをクリック
+// 次の画像へ
+function nextSlide() {
+
+    current++;
+
+    moveSlider(current);
+
+
+    // 複製側に入ったら、
+    // アニメーション終了後に本物へ瞬間移動
+    if (current >= imageCount) {
+
+        setTimeout(() => {
+
+            current = 0;
+
+            moveSlider(current, false);
+
+        }, 500);
+    }
+}
+
+
+// ドットをクリック
 buttons.forEach(button => {
 
     button.addEventListener("click", () => {
@@ -40,26 +79,22 @@ buttons.forEach(button => {
         const index =
             Number(button.dataset.slide);
 
-        slide(index);
+        current = index;
+
+        moveSlider(current);
 
     });
 
 });
 
 
-// 3秒ごとに自動スライド
+// 3秒ごと
 setInterval(() => {
 
-    current++;
-
-    if (current >= images.length) {
-        current = 0;
-    }
-
-    slide(current);
+    nextSlide();
 
 }, 3000);
 
 
-// 最初の状態
-slide(0);
+// 初期位置
+moveSlider(0, false);
