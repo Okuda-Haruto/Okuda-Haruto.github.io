@@ -169,12 +169,12 @@ h4 {
 
 .slider {
     width: 100%;
-    overflow: hidden;
 }
 
 .slider-window {
     width: 800px;
-    margin: auto;
+    margin: 0 auto;
+
     overflow: hidden;
 }
 
@@ -189,8 +189,9 @@ h4 {
     width: 600px;
     height: 350px;
 
-    object-fit: cover;
     flex-shrink: 0;
+
+    object-fit: cover;
 
     opacity: 0.4;
 
