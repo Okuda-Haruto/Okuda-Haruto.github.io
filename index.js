@@ -38,7 +38,6 @@ function setPosition(index)
 
 function updateDisplay(index)
 {
-    // 中央画像だけ明るくする
     images.forEach(image =>
     {
         image.classList.remove("active");
@@ -46,7 +45,6 @@ function updateDisplay(index)
 
     images[index].classList.add("active");
 
-    // ドット
     const dotIndex =
         (index - 1 + 3) % 3;
 
