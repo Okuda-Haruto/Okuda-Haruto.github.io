@@ -6,7 +6,8 @@ setInterval(() => {
     document.getElementById("timer").textContent = time;
 }, 1000);
 
-javascript
+
+
 let current = 0;
 
 const track = document.getElementById("slider-track");
