@@ -11,60 +11,69 @@ const imageWidth = 600;
 const gap = 20;
 const sliderWidth = 800;
 
-// 画像1枚を動かす距離
 const slideWidth = imageWidth + gap;
 
-// 中央に置くための余白
 const centerOffset =
     (sliderWidth - imageWidth) / 2;
+
+
+// ====================
+// スライド位置
+// ====================
+
+function setPosition(index)
+{
+    const moveX =
+        centerOffset -
+        index * slideWidth;
+
+    track.style.transform =
+        `translateX(${moveX}px)`;
+}
+
+
+// ====================
+// 表示更新
+// ====================
+
+function updateDisplay(index)
+{
+    // 中央画像だけ明るくする
+    images.forEach(image =>
+    {
+        image.classList.remove("active");
+    });
+
+    images[index].classList.add("active");
+
+    // ドット
+    const dotIndex =
+        (index - 1 + 3) % 3;
+
+    buttons.forEach((button, i) =>
+    {
+        button.classList.toggle(
+            "active",
+            i === dotIndex
+        );
+    });
+}
 
 
 // ====================
 // スライド
 // ====================
 
-function moveSlider(index, animation = true)
+function moveSlider(index)
 {
-    const moveX =
-        centerOffset -
-        index * slideWidth;
+    isMoving = true;
 
-    // アニメーション
     track.style.transition =
-        animation
-            ? "transform 0.5s ease"
-            : "none";
+        "transform 0.5s ease";
 
-    track.style.transform =
-        `translateX(${moveX}px)`;
+    setPosition(index);
 
-
-    // 全部暗くする
-    images.forEach(image => {
-        image.classList.remove("active");
-    });
-
-    // 中央だけ明るくする
-    images[index].classList.add("active");
-
-
-    // ドット更新
-    const dotIndex =
-        (index - 1 + 3) % 3;
-
-    buttons.forEach((button, i) => {
-
-        button.classList.toggle(
-            "active",
-            i === dotIndex
-        );
-
-    });
-
-    if (animation)
-    {
-        isMoving = true;
-    }
+    updateDisplay(index);
 }
 
 
@@ -76,52 +85,79 @@ function nextSlide()
 {
     if (isMoving)
         return;
-    
+
     current++;
 
     moveSlider(current);
 }
 
-track.addEventListener("transitionend", (event) =>
-{
-    if (event.propertyName !== "transform")
-        return;
 
-    if (current === 4)
+// ====================
+// アニメーション終了
+// ====================
+
+track.addEventListener(
+    "transitionend",
+    (event) =>
     {
-        track.style.transition = "none";
+        if (event.propertyName !== "transform")
+            return;
 
-        current = 1;
-
-        moveSlider(current, false);
-
-        track.offsetHeight;
-
-        requestAnimationFrame(() =>
+        // 複製1まで来た
+        if (current === 4)
         {
-            track.style.transition =
-                "transform 0.5s ease";
+            /*
+                ここで
 
+                複製1
+                   ↓
+                本物1
+
+                にワープする
+            */
+
+            track.style.transition = "none";
+
+            current = 1;
+
+            setPosition(current);
+            updateDisplay(current);
+
+            /*
+                transition:none の状態で
+                ブラウザに位置変更を確定させる
+            */
+            track.offsetHeight;
+
+            /*
+                次のフレームでtransitionを戻す
+            */
+            requestAnimationFrame(() =>
+            {
+                track.style.transition =
+                    "transform 0.5s ease";
+
+                isMoving = false;
+            });
+        }
+        else
+        {
             isMoving = false;
-        });
+        }
     }
-    else
-    {
-        isMoving = false;
-    }
-});
+);
 
 
 // ====================
 // ドット
 // ====================
 
-buttons.forEach(button => {
-
+buttons.forEach(button =>
+{
     button.addEventListener(
         "click",
-        () => {
-
+        () =>
+        {
             if (isMoving)
                 return;
 
@@ -133,10 +169,8 @@ buttons.forEach(button => {
             current = index + 1;
 
             moveSlider(current);
-
         }
     );
-
 });
 
 
@@ -144,8 +178,8 @@ buttons.forEach(button => {
 // 自動スライド
 // ====================
 
-setInterval(() => {
-
+setInterval(() =>
+{
     nextSlide();
 
 }, 3000);
@@ -155,7 +189,7 @@ setInterval(() => {
 // 初期状態
 // ====================
 
-moveSlider(
-    current,
-    false
-);
+track.style.transition = "none";
+
+setPosition(current);
+updateDisplay(current);
