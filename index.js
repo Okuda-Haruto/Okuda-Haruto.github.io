@@ -94,52 +94,85 @@ function nextSlide()
 // アニメーション終了
 // ====================
 
-track.addEventListener(
-    "transitionend",
-    (event) =>
+track.addEventListener("transitionend", (event) =>
+{
+    if (event.propertyName !== "transform")
+        return;
+
+    if (current === 4)
     {
-        if (event.propertyName !== "transform")
-            return;
+        // --------------------
+        // ワープ前
+        // --------------------
 
-        if (current === 4)
+        // transformのアニメーション停止
+        track.style.transition = "none";
+
+        // opacityのアニメーションも停止
+        images.forEach(image =>
         {
-            // アニメーションを停止
-            track.style.transition = "none";
+            image.style.transition = "none";
+        });
 
-            // 位置だけ本物の1へ戻す
-            current = 1;
 
-            const moveX =
-                centerOffset -
-                current * slideWidth;
+        // --------------------
+        // 本物の1へワープ
+        // --------------------
 
-            track.style.transform =
-                `translateX(${moveX}px)`;
+        current = 1;
 
-            /*
-                ここでは
-                updateDisplay() を呼ばない
+        setPosition(current);
 
-                すでに中央にある複製1の
-                見た目をそのまま維持する
-            */
 
-            track.offsetHeight;
+        // activeを本物の1へ変更
+        images.forEach(image =>
+        {
+            image.classList.remove("active");
+        });
 
-            requestAnimationFrame(() =>
+        images[current].classList.add("active");
+
+
+        // ドットも更新
+        buttons.forEach((button, i) =>
+        {
+            button.classList.toggle(
+                "active",
+                i === 0
+            );
+        });
+
+
+        // --------------------
+        // 変更を確定
+        // --------------------
+
+        track.offsetHeight;
+
+
+        // --------------------
+        // 次のフレームで元に戻す
+        // --------------------
+
+        requestAnimationFrame(() =>
+        {
+            track.style.transition =
+                "transform 0.5s ease";
+
+            images.forEach(image =>
             {
-                track.style.transition =
-                    "transform 0.5s ease";
-
-                isMoving = false;
+                image.style.transition =
+                    "opacity 0.5s ease";
             });
-        }
-        else
-        {
+
             isMoving = false;
-        }
+        });
     }
-);
+    else
+    {
+        isMoving = false;
+    }
+});
 
 
 // ====================
