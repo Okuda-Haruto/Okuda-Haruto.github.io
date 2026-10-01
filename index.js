@@ -103,35 +103,31 @@ track.addEventListener(
         if (event.propertyName !== "transform")
             return;
 
-        // 複製1まで来た
         if (current === 4)
         {
-            /*
-                ここで
-
-                複製1
-                   ↓
-                本物1
-
-                にワープする
-            */
-
+            // アニメーションを停止
             track.style.transition = "none";
 
+            // 位置だけ本物の1へ戻す
             current = 1;
 
-            setPosition(current);
-            updateDisplay(current);
+            const moveX =
+                centerOffset -
+                current * slideWidth;
+
+            track.style.transform =
+                `translateX(${moveX}px)`;
 
             /*
-                transition:none の状態で
-                ブラウザに位置変更を確定させる
+                ここでは
+                updateDisplay() を呼ばない
+
+                すでに中央にある複製1の
+                見た目をそのまま維持する
             */
+
             track.offsetHeight;
 
-            /*
-                次のフレームでtransitionを戻す
-            */
             requestAnimationFrame(() =>
             {
                 track.style.transition =
