@@ -189,6 +189,12 @@ h4 {
     margin: 0 0 10px 0;
 }
 
+.profile_icon {
+    width: 64px;
+    height: auto;
+    object-fit: cover;
+}
+
 .slider {
     width: 100%;
 }
