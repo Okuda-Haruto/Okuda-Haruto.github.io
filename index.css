@@ -248,6 +248,8 @@ h4 {
 
     height: 350px;
 
+	transform: translateX(120px);
+
     transition: transform 0.5s ease;
 }
 
