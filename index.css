@@ -236,7 +236,7 @@ h4 {
     width: 840px;
     height: 350px;
 
-    margin: 0 auto;
+	margin: 0 0 0 -73px;
 
     overflow: hidden;
 }
