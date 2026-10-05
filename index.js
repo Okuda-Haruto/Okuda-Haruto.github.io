@@ -9,7 +9,7 @@ const buttons = document.querySelectorAll(
 
 const imageWidth = 600;
 const gap = 20;
-const sliderWidth = 800;
+const sliderWidth = 840;
 
 const slideWidth = imageWidth + gap;
 
