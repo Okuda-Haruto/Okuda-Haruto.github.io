@@ -237,9 +237,7 @@ h4 {
 .slider-window {
     width: 840px;
     height: 350px;
-
-	margin: 0 0 0 -73px;
-
+    margin: 0 auto;
     overflow: hidden;
 }
 
