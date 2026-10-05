@@ -221,11 +221,7 @@ track.style.transition = "none";
 setPosition(current);
 updateDisplay(current);
 
-
-
-<script>
 function toggleDescription(image) {
     const description = image.nextElementSibling;
     description.classList.toggle("show");
 }
-</script>
