@@ -201,6 +201,32 @@ h4 {
     object-fit: contain;
 }
 
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gif-item {
+    cursor: pointer;
+}
+
+.gif-item img {
+    width: 100%;
+    display: block;
+}
+
+.gif-description {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.gif-description.show {
+    display: block;
+}
+
 .slider {
     width: 100%;
 }
