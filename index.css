@@ -936,6 +936,15 @@ body.modal-open {
 
 
 /* GunKid：YouTube動画と技術的な見どころ */
+.work-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 8px;
+}
+
 .featured-work-video {
     position: relative;
     width: 100%;
