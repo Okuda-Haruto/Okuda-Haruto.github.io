@@ -939,10 +939,12 @@ body.modal-open {
 .work-video {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
     height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: none;
     border: none;
     border-radius: 8px;
+    background: #111;
 }
 
 .featured-work-video {
