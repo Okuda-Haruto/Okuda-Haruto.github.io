@@ -1,226 +1,297 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <title>奥田悠人のポートフォリオ</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="index.css">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="index.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="outer">
-<header><div id="header-container"><div id="head-inner"><h1>奥田悠人のポートフォリオ</h1>
+<header><div id="header-container"><div id="head-inner">
+<h1>奥田悠人のポートフォリオ</h1>
+<nav class="header-shortcuts" aria-label="ページ内ショートカット">
+<a href="#self-introduction">自己紹介</a>
+<a href="#featured-work">就職作品</a>
+<a href="#work-list">作品紹介</a>
+</nav>
 </div></div>
 </header>
 <div id="content-wrapper">
 <main>
 <div id="inner">
-
 <div class="slider">
-    <div class="slider-window">
-        <div id="slider-track">
-            <img src="images/slide_image_03.png">
-            <img src="images/slide_image_01.png">
-            <img src="images/slide_image_02.png">
-            <img src="images/slide_image_03.png">
-            <img src="images/slide_image_01.png">
-            <img src="images/slide_image_02.png">
-        </div>
-    </div>
-    <div class="slider-buttons">
-        <button data-slide="0"></button>
-        <button data-slide="1"></button>
-        <button data-slide="2"></button>
-    </div>
+<div class="slider-window">
+<div id="slider-track">
+<img src="images/slide_image_03.png"/>
+<img src="images/slide_image_01.png"/>
+<img src="images/slide_image_02.png"/>
+<img src="images/slide_image_03.png"/>
+<img src="images/slide_image_01.png"/>
+<img src="images/slide_image_02.png"/>
 </div>
-    
-<h2>自己紹介</h2>
-<br>
+</div>
+<div class="slider-buttons">
+<button data-slide="0"></button>
+<button data-slide="1"></button>
+<button data-slide="2"></button>
+</div>
+</div>
+<h2 id="self-introduction" class="page-section-anchor">自己紹介</h2>
+<br/>
 <div class="profile">
-    <img src="images/profile_image.jpeg">
-    
-    <div class="profile_text">
-        <h4>名前：　奥田 悠人(オクダ ハルト)</h4>
-        <h4>担当：　プログラマー</h4>
-        <h4>趣味：　音楽鑑賞、簡単な料理</h4>
-        <h4>使用可能ツール</h4>
-        <div class="profile_icon">
-            <img src="images/icon-github.png">
-            <img src="images/icon-visual-studio.png">
-            <img src="images/icon-blender.png">
-            <img src="images/icon-aseprite.png">
-        </div>
-    </div>
+<img src="images/profile_image.jpeg"/>
+<div class="profile_text">
+<h4>名前：　奥田 悠人(オクダ ハルト)</h4>
+<h4>担当：　プログラマー</h4>
+<h4>趣味：　音楽鑑賞、簡単な料理</h4>
+<h4>使用可能ツール</h4>
+<div class="profile_icon">
+<img src="images/icon-github.png"/>
+<img src="images/icon-visual-studio.png"/>
+<img src="images/icon-blender.png"/>
+<img src="images/icon-aseprite.png"/>
 </div>
-    
-<h2>作品紹介</h2>
-<p>クリックで説明を表示できます</p>
-<br>
-<div class="gif-grid">
-    <div class="gif-item">
-        <img src="images/gamegif_1_1.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>Archer's Guardian</h3>
-            <h4>製作期間: 2024/5/1 ~ 2024/6/28</h4>
-            <h4>担当: 全て</h4>
-            <p>1年次最初に製作したタワーディフェンス兼シューティングゲーム。</p>
-            <p>1フェーズに出てくる敵を全滅させればプレイヤーの能力を上げられ、5フェーズごとに特別な選択肢が現れるが、フェーズを進めるほど敵も強く多くなる。</p>
-            <p>特にプレイヤーの能力上昇の選択肢にはこだわっており、1文字1文字文字を自作して、char型でも日本語が使える文章描画用の関数を作っていた。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_1_2.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>Rain Sword Man</h3>
-            <h4>製作期間: 2024/8/7 ~ 2024/8/31</h4>
-            <h4>担当: 全て</h4>
-            <p>1年次夏休み期間に制作したシューティングアクションゲーム。</p>
-            <p>武器の傘を剣として使って敵を切る・銃として使って敵を撃つ・開けば盾にして敵を寄せ付けない等を、使い分けて敵を倒し最終的に出てくるボスを倒す。やられたら敵を倒した時に得られるポイントでプレイヤーを強化していく。</p>
-            <p>特にプレイヤーをボーンで動かす事にこだわり、しっかりジョイントを回転させることでプレイヤーの動きを表現し、傘のボーンに合わせて攻撃判定を出している。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_1_3.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>ドリームメモリー</h3>
-            <h4>製作期間: 2024/9/4 ~ 2024/9/13</h4>
-            <h4>担当: プレイヤー・ギミックの動き、マップチップとの衝突判定等</h4>
-            <p>1年次夏休み期間後に3人チーム、10日間で制作したパズルゲーム。</p>
-            <p>箱を押せる妹と、ガラスを通り抜けられる姉の特性を活かし、位置を入れ替える機能をうまく使って2人ともゴールに行けるように導く。</p>
-            <p>当時なりに動く床、押せる箱、通り抜けられるガラスのようなギミックがあってもプレイに支障をきたさない動きになるように努力した。</p>
-        </div>
-    </div>
-    
-    <div class="gif-item">
-        <img src="images/gamegif_1_4.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>おはじきのきせき</h3>
-            <h4>製作期間: 2024/9/30 ~ 2024/10/24</h4>
-            <h4>担当: ゲームシステム発案、オブジェクトとの衝突、反射判定、ステージ構想、衝突するオブジェクトスプライト制作等</h4>
-            <p>1年次、年に3回あるチーム制作の1回目にて3人チームで制作したパズルゲーム。</p>
-            <p>おはじきを飛ばして、ぶつかると灯る電球を全て灯すのを2周行うとクリアだが、2周目では1周目の移動の軌跡が交差した部分がおはじきを反射するようになるので2回同じルートを通ることはやりにくくなっている。</p>
-            <p>親切さを意識しており、壁やオブジェクトに衝突する際、どの方向に反射するかを表示する予測線を真っ先に実装した。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_1_5.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>奪取の魔導士</h3>
-            <h4>製作期間: 2024/10/28 ~ 2024/11/28</h4>
-            <h4>担当: ゲームシステム発案、ダッシュ可能時・攻撃・ボス体力減少演出、全オブジェクト衝突判定、ステージ制作・ボス行動等</h4>
-            <p>1年次、年に3回あるチーム制作の2回目にて3人チームで制作したアクションゲーム。</p>
-            <p>ボスにダッシュで突撃して攻撃し、体力を削り切ればクリア。ボスの遠距離攻撃をダッシュで奪うことができ、次に攻撃する際に奪った遠距離攻撃で追加攻撃を行う。</p>
-            <p>ダッシュで奪う行動を、まったく行わない・取れそうな時だけ取る・出来るだけ貯めて一気に放つの、3つの層があると仮定し、そのどの層でもクリアできるかつ、活用した方が楽しくなる設計になるように努力した。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_1_6.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>ビッグメン</h3>
-            <h4>製作期間: 2024/12/2 ~ 2025/2/6</h4>
-            <h4>担当: プレイヤー・敵・ファン(プレイヤーの周囲を回る子機)の動き全般、パーティクル、エディター類、強化画面等</h4>
-            <p>1年次、年に3回あるチーム制作の3回目にて3人チームで制作した見下ろし型のアクションゲーム。</p>
-            <p>プレイヤーの子機になるファンがマップに落ちており、そのままではプレイヤーの周囲を回りシールドになり、攻撃ボタンで振り回して遠くまで届く攻撃にもできる。レベルアップで攻撃力やファン所持数を上げたりできるだけでなく、一定値ごとにスケールアップしてより強大な敵が現れるようになる。</p>
-            <p>エディター製作をする際にこのゲームのスケールアップする特性に合わせて画面端基準での出現位置にしたり、実際にその位置に出現させてプレビューできるようにしたり、なるべくこのゲームに合わせた使いやすいエディターになるように制作していた。</p>
-        </div>
-    </div>
-    
-    <div class="gif-item">
-        <img src="images/gamegif_2_1.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>マジックハンド</h3>
-            <h4>製作期間: 2025/7/15 ~ 2025/8/28</h4>
-            <h4>担当: 全て</h4>
-            <p>2年次夏休み期間に制作した3Dレールシューティングアクションゲーム。</p>
-            <p>プレイヤーではなく時期に横に子機である手から弾を発射する。手の形ごとに弾の発射角度などが変わる。マップ上に手が落ちているので拾って弾数も増やせる。</p>
-            <p>レールシューティングでも枝分かれした進行方向にできると考え、画面の左右どちら側にいるかを分かれ道の前に判定してルート変更を行っている。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_2_2.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>モアイズ</h3>
-            <h4>製作期間: 2025/9/1 ~ 2025/9/10</h4>
-            <h4>担当: モデル制作、パーティクル、演出、タイトル画面、HUD等</h4>
-            <p>2年次夏休み期間後に4人チーム・10日間で制作した3D見下ろし視点のアクションゲーム</p>
-            <p>プレイヤーの目で見ながら近づくと視野の範囲のオブジェクトが縮小し、逆に離れると拡大するので、敵やダメージ床を拡大しないようにしながら、宝石を拡大してスコアを稼ぐ。</p>
-            <p>当時の技術ではパーティクルが半透明だとすべてのモデルの前に出すか、後方も透過したままになるかだったので、なるべく不透明でも何が起きてるかわかりやすいエフェクトに心がけた。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_2_3.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>急降下カラス飛行</h3>
-            <h4>製作期間: 2025/9/30 ~ 2025/10/29</h4>
-            <h4>担当: 全モデル、チュートリアル、プレイヤー、スコア・コンボシステム等</h4>
-            <p>2年次、年に3回あるチーム制作の1回目にて3人チームで制作した3Dランゲーム。</p>
-            <p>ワンボタンで無限にジャンプが可能で、長押しすると急降下。急降下で地面にいる敵に触れると急降下の始点まで飛び上がり衝撃波を発生させて敵を一掃する、敵を倒すほどコンボが積み重なりスコアが増えるが、敵の攻撃に当たるか着地するとコンボが途切れる。</p>
-            <p>シンプルな操作で爽快感を与えるため、無限に飛び上がれて高いほど衝撃範囲を広げて行ったが、それだと無限に飛ぶことを目的にしてしまうプレイヤーが現れるので上空に制限区域としてジャガイモの小惑星帯を作ることで対策した。</p>
-        </div>
-    </div>
-    
-    <div class="gif-item">
-        <img src="images/gamegif_2_4.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>ぶんぶんている</h3>
-            <h4>製作期間: 2025/10/30 ~ 2025/12/10</h4>
-            <h4>担当: ゲームシステム発案、エンジン、プレイヤー・尻尾挙動、ボス攻撃範囲システム、プレイヤーやポスのモーション全般等</h4>
-            <p>2年次、年に3回あるチーム制作の2回目にて4人チームで制作した3D見下ろし視点アクションゲーム。</p>
-            <p>尻尾のあるプレイヤーをぐるぐる回すことで尻尾を振り回してそれをぶつけて攻撃するゲーム。ただし敵が降らせた剣に尻尾が当たってしまうと地面に尻尾が刺さって動かせなくなるので切って短くしなければならない。だが降らせ終わって地面にある剣は尻尾で破壊でき、破壊すると出現する星を集めて尻尾を伸ばすことができる。</p>
-            <p>尻尾はプレイヤーが動いていると曲がるが動いてなければ真っ直ぐに戻り、尻尾に1本剣が刺さっても刺さった場所を軸にしてぐるぐる回れ、2本刺さるとその場から動けなくなる等、尻尾のしなりのある動きにこだわった。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_2_5.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>C.C.C</h3>
-            <h4>製作期間: 2026/1/8 ~ 2026/2/4</h4>
-            <h4>担当: ゲームシステム発案、エンジン、地形との接触判定、パーティクル、ポーズ画面等</h4>
-            <p>2年次、年に3回あるチーム制作の3回目にて4人チームで制作した3DFPS視点シューティングゲーム。</p>
-            <p>銃を改造するフェーズとその銃で戦うフェーズがあり、銃の改造では弾が通るルートにモジュールをつけて分岐させたりして弾同士を銃の中でぶつけることで火力を上げられるが、弾数が減るので多数相手に戦いにくくなる。</p>
-            <p>銃が改造している感覚にこだわり、強くなるほど弾の色を変えたり、銃の改造で配置したモジュールと銃の中を通る弾がFPS視点でも見えるようにした。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_3_1.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>災Guy</h3>
-            <h4>製作期間: 2026/2/20 ~ 2026/6/1</h4>
-            <h4>担当: エンジン、ボクセル描画・衝突判定、プレイヤー挙動、ゲームカメラ、タイトル画面、天球、エディター等</h4>
-            <p>3年次、春休みから3人での4ヶ月制作にて制作した3Dアクションゲーム</p>
-            <p>落ちながらいろんなものになっているボクセルを力を溜めて駒を投げて竜巻を発生させて破壊するゲーム。</p>
-            <p>操作もルールもシンプルだが、ひたすら爽快感を得られるようにこだわり、竜巻で破壊するとボクセルが一回り小さいボクセルに分裂していって壊している感覚を得やすくしたり、最後に通ってきた道を見せて達成感を得られるようにした。</p>
-        </div>
-    </div>
-    
-    <div class="gif-item">
-        <img src="images/gamegif_3_2.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>わたる</h3>
-            <h4>製作期間: 2026/8/31 ~ 2026/9/9</h4>
-            <h4>担当: タンポポの種の動き、タンポポの花の動きや根っこの出現、土、モデル等</h4>
-            <p>3年次夏休み期間後に3人チーム・10日間で制作した3Dパズルゲーム</p>
-            <p>タンポポの種を植木鉢まで飛ばせばクリア。タンポポの種はもちろん土に着地すれば花が生え、種が花にぶつかると花が伸び、種が綿毛にぶつかると跳ねるため、これらを活用して植木鉢まで種を飛ばす。</p>
-            <p>できるだけ同じ土にタンポポをはやせないのを分かりやすくするために根っこを全体に生やすようにしました。</p>
-        </div>
-    </div>
-    <div class="gif-item">
-        <img src="images/gamegif_3_3.gif" onclick="toggleDescription(this)">
-        <div class="gif-description">
-            <h3>GunKid</h3>
-            <h4>製作期間: 2025/9/22 ~ 現在</h4>
-            <h4>担当: 全て</h4>
-            <p>2年次の後期に制作していた3Dシューティングゲームをブラッシュアップして現在制作しているゲーム。</p>
-            <p>シンプルなシューティングゲームの中に6発までしか撃てない弾、壁にぶつかるとスタンする回避など、シンプルだが考えて使わないといけないシステムにしています。</p>
-            <p>こういうプレイヤー視点のゲームではカメラがマップ上のオブジェクトと接近することが非常に多いため、接近したらオブジェクトを透過してプレイヤーがちゃんと見えるようにしています。</p>
-        </div>
-    </div>
+</div>
 </div>
 
-<br>
-    
+<section id="featured-work" class="featured-work page-section-anchor" aria-labelledby="featured-work-title">
+  <div class="featured-work-eyebrow">GRADUATION PROJECT · IN DEVELOPMENT</div>
+  <div class="featured-work-layout">
+    <div class="featured-work-media">
+      <div class="featured-work-video">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/GSXLrYShMic?si=5NdJpOC6QDtN5rKA" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="featured-work-copy">
+      <p class="featured-work-status">現在制作中の卒業作品</p>
+      <h2 id="featured-work-title">GunKid</h2>
+      <p class="featured-work-lead">3Dシューティングゲーム｜個人制作</p>
+      <div class="featured-work-details">
+        <div><strong>担当</strong><span>企画・プログラムなど全般</span></div>
+      </div>
+      <section class="featured-work-highlights" aria-labelledby="gunkid-highlights-title">
+        <ul>
+          <li><strong>カメラ制御：</strong>プレイヤーが見えなくならないよう、周囲のオブジェクトとの距離に応じて表示を制御。</li>
+          <li><strong>状況に応じたボスAI：</strong>戦闘状況に合わせてボスの行動を変化させるシステム。</li>
+          <li><strong>ターゲッティング：</strong>ボスや箱など、対象を狙うためのターゲッティング機能。</li>
+        </ul>
+      </section>
+      <div class="featured-work-actions">
+        <a class="featured-work-github" href="https://github.com/Okuda-Haruto/GameEngine" target="_blank" rel="noopener noreferrer">GitHubリンクはコチラ <span aria-hidden="true">↗</span></a>
+        <button class="featured-work-more" id="openGunKidDetails" type="button">作品の詳細を見る</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 id="work-list" class="page-section-anchor">作品紹介</h2>
+<br/>
+<div aria-label="作品検索" class="work-filter">
+<div class="work-filter-top">
+<label class="work-search-label" for="workSearch">キーワード検索</label>
+<input class="work-search" id="workSearch" placeholder="作品名・ジャンルなどで検索" type="search"/>
+<button class="clear-work-filters" id="clearWorkFilters" type="button">すべて解除</button>
+</div>
+
+
+
+<details class="work-filter-details"><summary>タグで絞り込む</summary><div class="work-filter-group">
+<span class="work-filter-heading">学年</span>
+<button aria-pressed="false" class="tag-filter" data-tag="1年次" type="button">1年次</button>
+<button aria-pressed="false" class="tag-filter" data-tag="2年次" type="button">2年次</button>
+<button aria-pressed="false" class="tag-filter" data-tag="3年次" type="button">3年次</button>
+</div><div class="work-filter-group">
+<span class="work-filter-heading">制作形態</span>
+<button aria-pressed="false" class="tag-filter" data-tag="個人製作" type="button">個人製作</button>
+<button aria-pressed="false" class="tag-filter" data-tag="チーム制作" type="button">チーム制作</button>
+</div><div class="work-filter-group">
+<span class="work-filter-heading">ジャンル・特徴</span>
+<button aria-pressed="false" class="tag-filter" data-tag="2D" type="button">2D</button>
+<button aria-pressed="false" class="tag-filter" data-tag="3D" type="button">3D</button>
+<button aria-pressed="false" class="tag-filter" data-tag="アクション" type="button">アクション</button>
+<button aria-pressed="false" class="tag-filter" data-tag="シューティング" type="button">シューティング</button>
+<button aria-pressed="false" class="tag-filter" data-tag="FPS" type="button">FPS</button>
+<button aria-pressed="false" class="tag-filter" data-tag="パズル" type="button">パズル</button>
+<button aria-pressed="false" class="tag-filter" data-tag="タワーディフェンス" type="button">タワーディフェンス</button>
+<button aria-pressed="false" class="tag-filter" data-tag="レールシューティング" type="button">レールシューティング</button>
+<button aria-pressed="false" class="tag-filter" data-tag="ランゲーム" type="button">ランゲーム</button>
+<button aria-pressed="false" class="tag-filter" data-tag="ボクセル" type="button">ボクセル</button>
+</div></details><p aria-live="polite" class="work-result-count" id="workResultCount"></p>
+</div>
+<div class="gif-grid">
+<div class="gif-item" data-tags="1年次 個人製作 2D タワーディフェンス シューティング">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_1_1.gif"/><div class="work-card-info"><h3 class="work-card-title">Archer's Guardian</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">1年次</span><span class="work-card-tag">個人製作</span><span class="work-card-tag">2D</span><span class="work-card-tag">タワーディフェンス</span><span class="work-card-tag">シューティング</span></div></div>
+<div class="gif-description">
+<h3>Archer's Guardian</h3>
+<h4>製作期間: 2024/5/1 ~ 2024/6/28</h4>
+<h4>担当: 全て</h4>
+<p>1年次最初に製作したタワーディフェンス兼シューティングゲーム。</p>
+<p>1フェーズに出てくる敵を全滅させればプレイヤーの能力を上げられ、5フェーズごとに特別な選択肢が現れるが、フェーズを進めるほど敵も強く多くなる。</p>
+<p>特にプレイヤーの能力上昇の選択肢にはこだわっており、1文字1文字文字を自作して、char型でも日本語が使える文章描画用の関数を作っていた。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="1年次 個人製作 2D アクション シューティング">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_1_2.gif"/><div class="work-card-info"><h3 class="work-card-title">Rain Sword Man</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">1年次</span><span class="work-card-tag">個人製作</span><span class="work-card-tag">2D</span><span class="work-card-tag">アクション</span><span class="work-card-tag">シューティング</span></div></div>
+<div class="gif-description">
+<h3>Rain Sword Man</h3>
+<h4>製作期間: 2024/8/7 ~ 2024/8/31</h4>
+<h4>担当: 全て</h4>
+<p>1年次夏休み期間に制作したシューティングアクションゲーム。</p>
+<p>武器の傘を剣として使って敵を切る・銃として使って敵を撃つ・開けば盾にして敵を寄せ付けない等を、使い分けて敵を倒し最終的に出てくるボスを倒す。やられたら敵を倒した時に得られるポイントでプレイヤーを強化していく。</p>
+<p>特にプレイヤーをボーンで動かす事にこだわり、しっかりジョイントを回転させることでプレイヤーの動きを表現し、傘のボーンに合わせて攻撃判定を出している。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="1年次 チーム制作 2D パズル アクション">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_1_3.gif"/><div class="work-card-info"><h3 class="work-card-title">ドリームメモリー</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">1年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">2D</span><span class="work-card-tag">パズル</span><span class="work-card-tag">アクション</span></div></div>
+<div class="gif-description">
+<h3>ドリームメモリー</h3>
+<h4>製作期間: 2024/9/4 ~ 2024/9/13</h4>
+<h4>担当: プレイヤー・ギミックの動き、マップチップとの衝突判定等</h4>
+<p>1年次夏休み期間後に3人チーム、10日間で制作したパズルゲーム。</p>
+<p>箱を押せる妹と、ガラスを通り抜けられる姉の特性を活かし、位置を入れ替える機能をうまく使って2人ともゴールに行けるように導く。</p>
+<p>当時なりに動く床、押せる箱、通り抜けられるガラスのようなギミックがあってもプレイに支障をきたさない動きになるように努力した。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="1年次 チーム制作 2D パズル">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_1_4.gif"/><div class="work-card-info"><h3 class="work-card-title">おはじきのきせき</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">1年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">2D</span><span class="work-card-tag">パズル</span></div></div>
+<div class="gif-description">
+<h3>おはじきのきせき</h3>
+<h4>製作期間: 2024/9/30 ~ 2024/10/24</h4>
+<h4>担当: ゲームシステム発案、オブジェクトとの衝突、反射判定、ステージ構想、衝突するオブジェクトスプライト制作等</h4>
+<p>1年次、年に3回あるチーム制作の1回目にて3人チームで制作したパズルゲーム。</p>
+<p>おはじきを飛ばして、ぶつかると灯る電球を全て灯すのを2周行うとクリアだが、2周目では1周目の移動の軌跡が交差した部分がおはじきを反射するようになるので2回同じルートを通ることはやりにくくなっている。</p>
+<p>親切さを意識しており、壁やオブジェクトに衝突する際、どの方向に反射するかを表示する予測線を真っ先に実装した。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="1年次 チーム制作 2D アクション">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_1_5.gif"/><div class="work-card-info"><h3 class="work-card-title">奪取の魔導士</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">1年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">2D</span><span class="work-card-tag">アクション</span></div></div>
+<div class="gif-description">
+<h3>奪取の魔導士</h3>
+<h4>製作期間: 2024/10/28 ~ 2024/11/28</h4>
+<h4>担当: ゲームシステム発案、ダッシュ可能時・攻撃・ボス体力減少演出、全オブジェクト衝突判定、ステージ制作・ボス行動等</h4>
+<p>1年次、年に3回あるチーム制作の2回目にて3人チームで制作したアクションゲーム。</p>
+<p>ボスにダッシュで突撃して攻撃し、体力を削り切ればクリア。ボスの遠距離攻撃をダッシュで奪うことができ、次に攻撃する際に奪った遠距離攻撃で追加攻撃を行う。</p>
+<p>ダッシュで奪う行動を、まったく行わない・取れそうな時だけ取る・出来るだけ貯めて一気に放つの、3つの層があると仮定し、そのどの層でもクリアできるかつ、活用した方が楽しくなる設計になるように努力した。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="1年次 チーム制作 2D アクション">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_1_6.gif"/><div class="work-card-info"><h3 class="work-card-title">ビッグメン</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">1年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">2D</span><span class="work-card-tag">アクション</span></div></div>
+<div class="gif-description">
+<h3>ビッグメン</h3>
+<h4>製作期間: 2024/12/2 ~ 2025/2/6</h4>
+<h4>担当: プレイヤー・敵・ファン(プレイヤーの周囲を回る子機)の動き全般、パーティクル、エディター類、強化画面等</h4>
+<p>1年次、年に3回あるチーム制作の3回目にて3人チームで制作した見下ろし型のアクションゲーム。</p>
+<p>プレイヤーの子機になるファンがマップに落ちており、そのままではプレイヤーの周囲を回りシールドになり、攻撃ボタンで振り回して遠くまで届く攻撃にもできる。レベルアップで攻撃力やファン所持数を上げたりできるだけでなく、一定値ごとにスケールアップしてより強大な敵が現れるようになる。</p>
+<p>エディター製作をする際にこのゲームのスケールアップする特性に合わせて画面端基準での出現位置にしたり、実際にその位置に出現させてプレビューできるようにしたり、なるべくこのゲームに合わせた使いやすいエディターになるように制作していた。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="2年次 個人製作 3D レールシューティング シューティング">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_2_1.gif"/><div class="work-card-info"><h3 class="work-card-title">マジックハンド</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">2年次</span><span class="work-card-tag">個人製作</span><span class="work-card-tag">3D</span><span class="work-card-tag">レールシューティング</span><span class="work-card-tag">シューティング</span></div></div>
+<div class="gif-description">
+<h3>マジックハンド</h3>
+<h4>製作期間: 2025/7/15 ~ 2025/8/28</h4>
+<h4>担当: 全て</h4>
+<p>2年次夏休み期間に制作した3Dレールシューティングアクションゲーム。</p>
+<p>プレイヤーではなく時期に横に子機である手から弾を発射する。手の形ごとに弾の発射角度などが変わる。マップ上に手が落ちているので拾って弾数も増やせる。</p>
+<p>レールシューティングでも枝分かれした進行方向にできると考え、画面の左右どちら側にいるかを分かれ道の前に判定してルート変更を行っている。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="2年次 チーム制作 3D アクション">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_2_2.gif"/><div class="work-card-info"><h3 class="work-card-title">モアイズ</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">2年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">3D</span><span class="work-card-tag">アクション</span></div></div>
+<div class="gif-description">
+<h3>モアイズ</h3>
+<h4>製作期間: 2025/9/1 ~ 2025/9/10</h4>
+<h4>担当: モデル制作、パーティクル、演出、タイトル画面、HUD等</h4>
+<p>2年次夏休み期間後に4人チーム・10日間で制作した3D見下ろし視点のアクションゲーム</p>
+<p>プレイヤーの目で見ながら近づくと視野の範囲のオブジェクトが縮小し、逆に離れると拡大するので、敵やダメージ床を拡大しないようにしながら、宝石を拡大してスコアを稼ぐ。</p>
+<p>当時の技術ではパーティクルが半透明だとすべてのモデルの前に出すか、後方も透過したままになるかだったので、なるべく不透明でも何が起きてるかわかりやすいエフェクトに心がけた。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="2年次 チーム制作 3D ランゲーム アクション">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_2_3.gif"/><div class="work-card-info"><h3 class="work-card-title">急降下カラス飛行</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">2年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">3D</span><span class="work-card-tag">ランゲーム</span><span class="work-card-tag">アクション</span></div></div>
+<div class="gif-description">
+<h3>急降下カラス飛行</h3>
+<h4>製作期間: 2025/9/30 ~ 2025/10/29</h4>
+<h4>担当: 全モデル、チュートリアル、プレイヤー、スコア・コンボシステム等</h4>
+<p>2年次、年に3回あるチーム制作の1回目にて3人チームで制作した3Dランゲーム。</p>
+<p>ワンボタンで無限にジャンプが可能で、長押しすると急降下。急降下で地面にいる敵に触れると急降下の始点まで飛び上がり衝撃波を発生させて敵を一掃する、敵を倒すほどコンボが積み重なりスコアが増えるが、敵の攻撃に当たるか着地するとコンボが途切れる。</p>
+<p>シンプルな操作で爽快感を与えるため、無限に飛び上がれて高いほど衝撃範囲を広げて行ったが、それだと無限に飛ぶことを目的にしてしまうプレイヤーが現れるので上空に制限区域としてジャガイモの小惑星帯を作ることで対策した。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="2年次 チーム制作 3D アクション">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_2_4.gif"/><div class="work-card-info"><h3 class="work-card-title">ぶんぶんている</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">2年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">3D</span><span class="work-card-tag">アクション</span></div></div>
+<div class="gif-description">
+<h3>ぶんぶんている</h3>
+<h4>製作期間: 2025/10/30 ~ 2025/12/10</h4>
+<h4>担当: ゲームシステム発案、エンジン、プレイヤー・尻尾挙動、ボス攻撃範囲システム、プレイヤーやポスのモーション全般等</h4>
+<p>2年次、年に3回あるチーム制作の2回目にて4人チームで制作した3D見下ろし視点アクションゲーム。</p>
+<p>尻尾のあるプレイヤーをぐるぐる回すことで尻尾を振り回してそれをぶつけて攻撃するゲーム。ただし敵が降らせた剣に尻尾が当たってしまうと地面に尻尾が刺さって動かせなくなるので切って短くしなければならない。だが降らせ終わって地面にある剣は尻尾で破壊でき、破壊すると出現する星を集めて尻尾を伸ばすことができる。</p>
+<p>尻尾はプレイヤーが動いていると曲がるが動いてなければ真っ直ぐに戻り、尻尾に1本剣が刺さっても刺さった場所を軸にしてぐるぐる回れ、2本刺さるとその場から動けなくなる等、尻尾のしなりのある動きにこだわった。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="2年次 チーム制作 3D FPS シューティング">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_2_5.gif"/><div class="work-card-info"><h3 class="work-card-title">C.C.C</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">2年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">3D</span><span class="work-card-tag">FPS</span><span class="work-card-tag">シューティング</span></div></div>
+<div class="gif-description">
+<h3>C.C.C</h3>
+<h4>製作期間: 2026/1/8 ~ 2026/2/4</h4>
+<h4>担当: ゲームシステム発案、エンジン、地形との接触判定、パーティクル、ポーズ画面等</h4>
+<p>2年次、年に3回あるチーム制作の3回目にて4人チームで制作した3DFPS視点シューティングゲーム。</p>
+<p>銃を改造するフェーズとその銃で戦うフェーズがあり、銃の改造では弾が通るルートにモジュールをつけて分岐させたりして弾同士を銃の中でぶつけることで火力を上げられるが、弾数が減るので多数相手に戦いにくくなる。</p>
+<p>銃が改造している感覚にこだわり、強くなるほど弾の色を変えたり、銃の改造で配置したモジュールと銃の中を通る弾がFPS視点でも見えるようにした。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="3年次 チーム制作 3D アクション ボクセル">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_3_1.gif"/><div class="work-card-info"><h3 class="work-card-title">災Guy</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">3年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">3D</span><span class="work-card-tag">アクション</span><span class="work-card-tag">ボクセル</span></div></div>
+<div class="gif-description">
+<h3>災Guy</h3>
+<h4>製作期間: 2026/2/20 ~ 2026/6/1</h4>
+<h4>担当: エンジン、ボクセル描画・衝突判定、プレイヤー挙動、ゲームカメラ、タイトル画面、天球、エディター等</h4>
+<p>3年次、春休みから3人での4ヶ月制作にて制作した3Dアクションゲーム</p>
+<p>落ちながらいろんなものになっているボクセルを力を溜めて駒を投げて竜巻を発生させて破壊するゲーム。</p>
+<p>操作もルールもシンプルだが、ひたすら爽快感を得られるようにこだわり、竜巻で破壊するとボクセルが一回り小さいボクセルに分裂していって壊している感覚を得やすくしたり、最後に通ってきた道を見せて達成感を得られるようにした。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="3年次 チーム制作 3D パズル">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_3_2.gif"/><div class="work-card-info"><h3 class="work-card-title">わたる</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">3年次</span><span class="work-card-tag">チーム制作</span><span class="work-card-tag">3D</span><span class="work-card-tag">パズル</span></div></div>
+<div class="gif-description">
+<h3>わたる</h3>
+<h4>製作期間: 2026/8/31 ~ 2026/9/9</h4>
+<h4>担当: タンポポの種の動き、タンポポの花の動きや根っこの出現、土、モデル等</h4>
+<p>3年次夏休み期間後に3人チーム・10日間で制作した3Dパズルゲーム</p>
+<p>タンポポの種を植木鉢まで飛ばせばクリア。タンポポの種はもちろん土に着地すれば花が生え、種が花にぶつかると花が伸び、種が綿毛にぶつかると跳ねるため、これらを活用して植木鉢まで種を飛ばす。</p>
+<p>できるだけ同じ土にタンポポをはやせないのを分かりやすくするために根っこを全体に生やすようにしました。</p>
+</div>
+</div>
+<div class="gif-item" data-tags="2年次 3年次 個人製作 3D シューティング">
+<img alt="作品画像" class="work-thumbnail" src="images/gamegif_3_3.gif"/><div class="work-card-info"><h3 class="work-card-title">GunKid</h3><div aria-label="作品タグ" class="work-card-tags"><span class="work-card-tag">2年次</span><span class="work-card-tag">3年次</span><span class="work-card-tag">個人製作</span><span class="work-card-tag">3D</span><span class="work-card-tag">シューティング</span></div></div>
+<div class="gif-description">
+<h3>GunKid</h3>
+<h4>製作期間: 2025/9/22 ~ 現在</h4>
+<h4>担当: 全て</h4>
+<p>2年次の後期に制作していた3Dシューティングゲームをブラッシュアップして現在制作しているゲーム。</p>
+<p>シンプルなシューティングゲームの中に6発までしか撃てない弾、壁にぶつかるとスタンする回避など、シンプルだが考えて使わないといけないシステムにしています。</p>
+<p>こういうプレイヤー視点のゲームではカメラがマップ上のオブジェクトと接近することが非常に多いため、接近したらオブジェクトを透過してプレイヤーがちゃんと見えるようにしています。</p>
+</div>
+</div>
+</div>
+<!-- 作品詳細モーダル：全作品で共通して使用 -->
+<div aria-hidden="true" class="work-modal" id="workModal">
+<div aria-labelledby="workModalTitle" aria-modal="true" class="work-modal-content" role="dialog">
+<button aria-label="閉じる" class="work-modal-close" id="closeWorkModal" type="button">×</button>
+<div id="workModalBody"></div>
+</div>
+</div>
+<br/>
 </div>
 </main>
-
 <script src="index.js"></script>
-</body>
+</div></div></body>
 </html>
