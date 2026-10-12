@@ -238,24 +238,29 @@ function openWorkModal(item) {
 
     workModalBody.innerHTML = "";
 
-    // 動画を説明の一番上に配置する
-    // gamegif_1_2.gif -> gamemp4_1_2.mp4
-    const videoPath = thumbnail.getAttribute("src")
-        .replace(/gamegif_(\d+_\d+)\.gif$/i, "gamemp4_$1.mp4");
+    // YouTube動画を説明の一番上に配置する
+const videoUrl = item.dataset.videoUrl;
 
+if (videoUrl) {
     const videoSection = document.createElement("section");
     videoSection.className = "work-video-section";
+
     const videoHeading = document.createElement("h4");
     videoHeading.className = "work-section-heading";
     videoHeading.textContent = "プレイ動画";
-    const video = document.createElement("video");
-    video.className = "work-video";
-    video.controls = true;
-    video.preload = "metadata";
-    video.src = videoPath;
-    video.setAttribute("aria-label", "作品のプレイ動画");
-    videoSection.append(videoHeading, video);
+
+    const iframe = document.createElement("iframe");
+    iframe.className = "work-video";
+    iframe.src = videoUrl;
+    iframe.title = "作品のプレイ動画";
+    iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+
+    videoSection.append(videoHeading, iframe);
     workModalBody.appendChild(videoSection);
+}
 
     // 元の説明からタイトル・担当・概要・アピールポイントを整理して配置する
     const title = description.querySelector("h3");
